@@ -1,0 +1,95 @@
+{
+  "users": {
+    "Document_ID": "UID",
+    "fields": {
+      "e-mail": {
+        "type": "string",
+        "description": "Email dùng để đăng nhập"
+      },
+      "nameUser": {
+        "type": "string",
+        "description": "Tên hiển thị của người dùng"
+      },
+      "sdt": {
+        "type": "string",
+        "description": "Số điện thoại"
+      },
+      "storageCap": {
+        "type": "string",
+        "description": "Dung lượng tối đa (ví dụ: '10GB')"
+      },
+      "storageUsed": {
+        "type": "number",
+        "description": "Dung lượng đã sử dụng (tính bằng bytes), mặc định là 0",
+        "default": 0
+      }
+    }
+  },
+  "folders": {
+    "Document_ID": "Auto-ID",
+    "description": "Chứa thông tin về các thư mục do người dùng tạo",
+    "fields": [
+      {
+        "fieldName": "createdAt",
+        "type": "timestamp",
+        "description": "Thời gian tạo folder."
+      },
+      {
+        "fieldName": "folderName",
+        "type": "string",
+        "description": "Tên của thư mục."
+      },
+      {
+        "fieldName": "ownerUid",
+        "type": "string",
+        "description": "UID của người sở hữu folder"
+      },
+      {
+        "fieldName": "parentFolderId",
+        "type": "string",
+        "description": "ID của folder cha (dùng '/' cho folder gốc)"
+      }
+    ]
+  },
+  "files": {
+    "Document_ID": "Auto-generated-ID",
+    "description": "Chứa siêu dữ liệu (metadata) của các file được lưu trữ trong Storage",
+    "fields": [
+      {
+        "fieldName": "createdAt",
+        "type": "timestamp",
+        "description": "Thời gian tạo file"
+      },
+      {
+        "fieldName": "fileName",
+        "type": "string",
+        "description": "Tên file gốc"
+      },
+      {
+        "fieldName": "fileSize",
+        "type": "number",
+        "description": "Kích thước file (tính bằng bytes)"
+      },
+      {
+        "fieldName": "isStarred",
+        "type": "boolean",
+        "description": "Trạng thái đánh dấu sao/yêu thích"
+      },
+      {
+        "fieldName": "ownerUid",
+        "type": "string",
+        "description": "UID của người sở hữu file"
+      },
+      {
+        "fieldName": "parentFolderId",
+        "type": "string",
+        "description": "ID của folder chứa file"
+      },
+      {
+        "fieldName": "storagePath",
+        "type": "string",
+        "description": "Đường dẫn đến file trong Cloud Storage"
+      }
+    ]
+  }
+}
